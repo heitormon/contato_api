@@ -16,7 +16,7 @@ export class VarejaoRepository {
     try {
       await this.varejaoRepository.save(contatos);
     } catch (e) {
-      throw new Error(`Contato já existente varejao`);
+      throw new Error(`Erro ao cadastrar contato`);
     }
   }
 }

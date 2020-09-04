@@ -14,7 +14,7 @@ export class MacapaRepository {
     try {
       await this.macapaRepository.save(contatos);
     } catch (e) {
-      throw new Error(`Contato já existente macapa`);
+      throw new Error(`Erro ao cadastrar contato`);
     }
   }
 }
