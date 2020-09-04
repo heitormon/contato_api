@@ -2,8 +2,8 @@
   {
     "name": "default",
     "type": "mysql",
-    "host": "webnet",
-    "port": 3307,
+    "host": "mysql",
+    "port": 3306,
     "username": "admin",
     "password": "admin",
     "database": "admin",
@@ -21,7 +21,7 @@
   {
     "name": "varejoDatabase",
     "type": "postgres",
-    "host": "webnet",
+    "host": "postgresql",
     "port": 5432,
     "username": "admin",
     "password": "admin",

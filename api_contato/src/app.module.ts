@@ -14,8 +14,8 @@ import { Usuario } from './entity/usuario.entity';
     AuthModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'webnet',
-      port: 3307,
+      host: 'mysql',
+      port: 3306,
       username: 'admin',
       password: 'admin',
       database: 'admin',
@@ -23,7 +23,7 @@ import { Usuario } from './entity/usuario.entity';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'webnet',
+      host: 'postgresql',
       port: 5432,
       username: 'admin',
       password: 'admin',

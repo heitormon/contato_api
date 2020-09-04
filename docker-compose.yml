@@ -30,6 +30,9 @@ services:
     links:
       - mysql
       - postgresql
+    command: npm run migration:run
+    command: npm run migration2:run
+    command: npm run start
     networks:
       - contato-network
     depends_on:
@@ -37,4 +40,4 @@ services:
       - mysql    
 networks:
   contato-network:
-    driver: bridge
+    
