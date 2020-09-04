@@ -18,28 +18,35 @@ import { JwtAuthGuard } from 'src/auth/jwt.auth.guard';
 @Controller('contato')
 export class ContatoController {
   constructor(private contatoService: ContatoService) {}
-  
+
   @Post('/varejao')
   @UseGuards(JwtAuthGuard)
   async criarContatoMacapa(
     @Res() res: Response,
-    @Body(new ParseArrayPipe({items: ContatoVarejaoDto}))
+    @Body(new ParseArrayPipe({ items: ContatoVarejaoDto }))
     newContatosDto: ContatoVarejaoDto[],
   ) {
-    if(newContatosDto.length == 0) throw new HttpException('Lista de contato vazia',HttpStatus.BAD_REQUEST);
-    const newContatos = newContatosDto.map(e =>{ return e.getContato()});
+    if (newContatosDto.length == 0)
+      throw new HttpException('Lista de contato vazia', HttpStatus.BAD_REQUEST);
+    const newContatos = newContatosDto.map(e => {
+      return e.getContato();
+    });
     await this.contatoService.cadastrarContato(newContatos, RedesEnum.VAREJAO);
     res.status(HttpStatus.CREATED).json(newContatosDto);
   }
 
   @Post('/macapa')
+  @UseGuards(JwtAuthGuard)
   async criarContatoVarejao(
     @Res() res: Response,
-    @Body(new ParseArrayPipe({items: ContatoMacapaDto}))
+    @Body(new ParseArrayPipe({ items: ContatoMacapaDto }))
     newContatosDto: ContatoMacapaDto[],
   ) {
-    if(newContatosDto.length == 0) throw new HttpException('Lista de contato vazia',HttpStatus.BAD_REQUEST);
-    const newContatos = newContatosDto.map(e =>{ return e.getContato()});
+    if (newContatosDto.length == 0)
+      throw new HttpException('Lista de contato vazia', HttpStatus.BAD_REQUEST);
+    const newContatos = newContatosDto.map(e => {
+      return e.getContato();
+    });
     await this.contatoService.cadastrarContato(newContatos, RedesEnum.MACAPA);
     res.status(HttpStatus.CREATED).json(newContatosDto);
   }
