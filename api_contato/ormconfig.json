@@ -1,0 +1,40 @@
+[
+  {
+    "name": "default",
+    "type": "mysql",
+    "host": "webnet",
+    "port": 3307,
+    "username": "admin",
+    "password": "admin",
+    "database": "admin",
+    "synchronize": true,
+    "logging": false,
+    "entities": ["src/entity/**/*.ts"],
+    "migrations": ["src/migration/**/*macapaRepository.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/entity",
+      "migrationsDir": "src/migration",
+      "subscribersDir": "src/subscriber"
+    }
+  },
+  {
+    "name": "varejoDatabase",
+    "type": "postgres",
+    "host": "webnet",
+    "port": 5432,
+    "username": "admin",
+    "password": "admin",
+    "database": "admin",
+    "synchronize": true,
+    "logging": false,
+    "entities": ["src/entity/**/*.ts"],
+    "migrations": ["src/migration/**/*varejaoRepository.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/entity",
+      "migrationsDir": "src/migration",
+      "subscribersDir": "src/subscriber"
+    }
+  }
+]
