@@ -23,7 +23,8 @@
     "migration:create": "./node_modules/.bin/ts-node ./node_modules/typeorm/cli.js migration:create -n",
     "migration:revert": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:revert",
     "migration2:run": " ./node_modules/.bin/ts-node ./node_modules/.bin/typeorm --connection varejoDatabase  migration:run",
-    "migration2:revert": " ./node_modules/.bin/ts-node ./node_modules/.bin/typeorm --connection varejoDatabase  migration:revert"
+    "migration2:revert": " ./node_modules/.bin/ts-node ./node_modules/.bin/typeorm --connection varejoDatabase  migration:revert",
+    "docker:start":"npm run migration:run && npm run migration2:run && npm run start"
   },
   "dependencies": {
     "@nestjs/common": "^7.0.0",

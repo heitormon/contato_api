@@ -30,14 +30,13 @@ services:
     links:
       - mysql
       - postgresql
-    command: npm run migration:run
-    command: npm run migration2:run
-    command: npm run start
+    command: dockerize -wait tcp://mysql:3306 -timeout 30s -wait-retry-interval 2s npm run docker:start
     networks:
       - contato-network
     depends_on:
       - postgresql
-      - mysql    
+      - mysql
+    
 networks:
   contato-network:
     
